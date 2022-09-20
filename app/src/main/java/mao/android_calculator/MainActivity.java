@@ -102,6 +102,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_minus:
             case R.id.btn_multiply:
             case R.id.btn_divide:
+                if (firstNum.equals("."))
+                {
+                    break;
+                }
                 operator = inputText; // 运算符
                 if (!secondNum.equals(""))
                 {
@@ -127,6 +131,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             // 点击了开根号按钮
             case R.id.ib_sqrt:
+                if (firstNum.equals("."))
+                {
+                    break;
+                }
                 double sqrt_result;
                 if (firstNum.equals(""))
                 {
@@ -141,6 +149,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             // 点击了求倒数按钮
             case R.id.btn_reciprocal:
+                if (firstNum.equals("."))
+                {
+                    break;
+                }
                 double reciprocal_result;
                 if (firstNum.equals(""))
                 {
