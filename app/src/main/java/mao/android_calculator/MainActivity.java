@@ -102,99 +102,149 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_minus:
             case R.id.btn_multiply:
             case R.id.btn_divide:
-                if (firstNum.equals("."))
-                {
-                    break;
-                }
-                operator = inputText; // 运算符
-                if (!secondNum.equals(""))
-                {
-                    double result = calculateFour();
-                    this.result = String.valueOf(result);
-                    firstNum = this.result;
-                    secondNum = "";
-
-                }
-                refreshText(showText + operator);
-                Log.d(TAG, "onClick: showText=" + showText
-                        + ", operator=" + operator);
-                Log.d(TAG, "onClick: firstNum="
-                        + firstNum + ",secondNum=" + secondNum);
-                Log.d(TAG, "onClick: result=" + result);
+                plus_minus_multiply_divide(inputText);
                 break;
             // 点击了等号按钮
             case R.id.btn_equal:
-                // 加减乘除四则运算
-                double calculate_result = calculateFour();
-                refreshOperate(String.valueOf(calculate_result));
-                refreshText(showText + "=" + result);
+                equal();
                 break;
             // 点击了开根号按钮
             case R.id.ib_sqrt:
-                if (firstNum.equals("."))
-                {
-                    break;
-                }
-                double sqrt_result;
-                if (firstNum.equals(""))
-                {
-                    sqrt_result = 0;
-                }
-                else
-                {
-                    sqrt_result = Math.sqrt(Double.parseDouble(firstNum));
-                }
-                refreshOperate(String.valueOf(sqrt_result));
-                refreshText(showText + "√=" + result);
+                sqrt();
                 break;
             // 点击了求倒数按钮
             case R.id.btn_reciprocal:
-                if (firstNum.equals("."))
-                {
-                    break;
-                }
-                double reciprocal_result;
-                if (firstNum.equals(""))
-                {
-                    reciprocal_result = 0;
-                }
-                else
-                {
-                    reciprocal_result = 1.0 / Double.parseDouble(firstNum);
-                }
-                refreshOperate(String.valueOf(reciprocal_result));
-                refreshText(showText + "/=" + result);
+                reciprocal();
                 break;
             // 点击了其他按钮，包括数字和小数点
             default:
-                // 上次的运算结果已经出来了
-                if (result.length() > 0 && operator.equals(""))
-                {
-                    clear();
-                }
-
-                // 无运算符，则继续拼接第一个操作数
-                if (operator.equals(""))
-                {
-                    firstNum = firstNum + inputText;
-                }
-                else
-                {
-                    // 有运算符，则继续拼接第二个操作数
-                    secondNum = secondNum + inputText;
-                }
-                // 整数不需要前面的0
-                if (showText.equals("0") && !inputText.equals("."))
-                {
-                    refreshText(inputText);
-                }
-                else
-                {
-                    refreshText(showText + inputText);
-                }
-                break;
+                caseDefault(inputText);
         }
 
+    }
+
+    /**
+     * 加减乘除
+     *
+     * @param inputText 输入文本
+     */
+    private void plus_minus_multiply_divide(String inputText)
+    {
+        if (firstNum.equals("."))
+        {
+            return;
+        }
+        operator = inputText; // 运算符
+        if (!secondNum.equals(""))
+        {
+            double result = calculateFour();
+            this.result = String.valueOf(result);
+            firstNum = this.result;
+            secondNum = "";
+
+        }
+        refreshText(showText + operator);
+        Log.d(TAG, "onClick: showText=" + showText
+                + ", operator=" + operator);
+        Log.d(TAG, "onClick: firstNum="
+                + firstNum + ",secondNum=" + secondNum);
+        Log.d(TAG, "onClick: result=" + result);
+        return;
+    }
+
+    /**
+     * caseDefault
+     *
+     * @param inputText 输入文本
+     */
+    private void caseDefault(String inputText)
+    {
+        // 上次的运算结果已经出来了
+        if (result.length() > 0 && operator.equals(""))
+        {
+            clear();
+        }
+
+        // 无运算符，则继续拼接第一个操作数
+        if (operator.equals(""))
+        {
+            firstNum = firstNum + inputText;
+        }
+        else
+        {
+            // 有运算符，则继续拼接第二个操作数
+            secondNum = secondNum + inputText;
+        }
+        // 整数不需要前面的0
+        if (showText.equals("0") && !inputText.equals("."))
+        {
+            refreshText(inputText);
+        }
+        else
+        {
+            refreshText(showText + inputText);
+        }
+        return;
+    }
+
+
+    /**
+     * 等号
+     */
+    private void equal()
+    {
+        // 加减乘除四则运算
+        double calculate_result = calculateFour();
+        refreshOperate(String.valueOf(calculate_result));
+        refreshText(showText + "=" + result);
+        return;
+    }
+
+    /**
+     * 求倒数
+     */
+    private void reciprocal()
+    {
+        if (firstNum.equals("."))
+        {
+            return;
+        }
+        double reciprocal_result;
+        if (firstNum.equals(""))
+        {
+            reciprocal_result = 0;
+        }
+        else
+        {
+            reciprocal_result = 1.0 / Double.parseDouble(firstNum);
+        }
+        refreshOperate(String.valueOf(reciprocal_result));
+        refreshText(showText + "/=" + result);
+        return;
+    }
+
+
+    /**
+     * √
+     */
+    private void sqrt()
+    {
+        if (firstNum.equals("."))
+        {
+            return;
+        }
+        double sqrt_result;
+        if (firstNum.equals(""))
+        {
+            sqrt_result = 0;
+        }
+        else
+        {
+            sqrt_result = Math.sqrt(Double.parseDouble(firstNum));
+        }
+        refreshOperate(String.valueOf(sqrt_result));
+        refreshText(showText + "√=" + result);
+        return;
     }
 
 
