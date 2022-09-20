@@ -33,25 +33,44 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tv_result = findViewById(R.id.tv_result);
         // 下面给每个按钮控件都注册了点击监听器
         findViewById(R.id.btn_cancel).setOnClickListener(this);
-        findViewById(R.id.btn_divide).setOnClickListener(this); // “除法”按钮
-        findViewById(R.id.btn_multiply).setOnClickListener(this); // “乘法”按钮
-        findViewById(R.id.btn_clear).setOnClickListener(this); // “清除”按钮
-        findViewById(R.id.btn_seven).setOnClickListener(this); // 数字7
-        findViewById(R.id.btn_eight).setOnClickListener(this); // 数字8
-        findViewById(R.id.btn_nine).setOnClickListener(this); // 数字9
-        findViewById(R.id.btn_plus).setOnClickListener(this); // “加法”按钮
-        findViewById(R.id.btn_four).setOnClickListener(this); // 数字4
-        findViewById(R.id.btn_five).setOnClickListener(this); // 数字5
-        findViewById(R.id.btn_six).setOnClickListener(this); // 数字6
-        findViewById(R.id.btn_minus).setOnClickListener(this); // “减法”按钮
-        findViewById(R.id.btn_one).setOnClickListener(this); // 数字1
-        findViewById(R.id.btn_two).setOnClickListener(this); // 数字2
-        findViewById(R.id.btn_three).setOnClickListener(this); // 数字3
-        findViewById(R.id.btn_reciprocal).setOnClickListener(this); // 求倒数按钮
-        findViewById(R.id.btn_zero).setOnClickListener(this); // 数字0
-        findViewById(R.id.btn_dot).setOnClickListener(this); // “小数点”按钮
-        findViewById(R.id.btn_equal).setOnClickListener(this); // “等号”按钮
-        findViewById(R.id.ib_sqrt).setOnClickListener(this); // “开平方”按钮
+        // “除法”按钮
+        findViewById(R.id.btn_divide).setOnClickListener(this);
+        // “乘法”按钮
+        findViewById(R.id.btn_multiply).setOnClickListener(this);
+        // “清除”按钮
+        findViewById(R.id.btn_clear).setOnClickListener(this);
+        // 数字7
+        findViewById(R.id.btn_seven).setOnClickListener(this);
+        // 数字8
+        findViewById(R.id.btn_eight).setOnClickListener(this);
+        // 数字9
+        findViewById(R.id.btn_nine).setOnClickListener(this);
+        // “加法”按钮
+        findViewById(R.id.btn_plus).setOnClickListener(this);
+        // 数字4
+        findViewById(R.id.btn_four).setOnClickListener(this);
+        // 数字5
+        findViewById(R.id.btn_five).setOnClickListener(this);
+        // 数字6
+        findViewById(R.id.btn_six).setOnClickListener(this);
+        // “减法”按钮
+        findViewById(R.id.btn_minus).setOnClickListener(this);
+        // 数字1
+        findViewById(R.id.btn_one).setOnClickListener(this);
+        // 数字2
+        findViewById(R.id.btn_two).setOnClickListener(this);
+        // 数字3
+        findViewById(R.id.btn_three).setOnClickListener(this);
+        // 求倒数按钮
+        findViewById(R.id.btn_reciprocal).setOnClickListener(this);
+        // 数字0
+        findViewById(R.id.btn_zero).setOnClickListener(this);
+        // “小数点”按钮
+        findViewById(R.id.btn_dot).setOnClickListener(this);
+        // “等号”按钮
+        findViewById(R.id.btn_equal).setOnClickListener(this);
+        // “开平方”按钮
+        findViewById(R.id.ib_sqrt).setOnClickListener(this);
     }
 
     @SuppressLint("NonConstantResourceId")
