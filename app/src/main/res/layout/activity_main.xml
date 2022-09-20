@@ -34,7 +34,8 @@
                     android:lines="5"
                     android:text="0"
                     android:textColor="#ff0000"
-                    android:textSize="26sp" />
+                    android:textSize="26sp"
+                    android:layout_marginBottom="@dimen/show_text_marginBottom"/>
 
             <GridLayout
                     android:layout_width="match_parent"
