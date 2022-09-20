@@ -23,18 +23,17 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="@string/simple_calculator"
-                    android:textColor="@color/black"
+                    android:textColor="#00ffff"
                     android:textSize="20sp" />
 
             <TextView
                     android:id="@+id/tv_result"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/white"
                     android:gravity="right|bottom"
                     android:lines="5"
                     android:text="0"
-                    android:textColor="@color/black"
+                    android:textColor="#ff0000"
                     android:textSize="26sp" />
 
             <GridLayout
@@ -217,7 +216,7 @@
                         android:layout_margin="@dimen/Button_mrgin"
                         android:background="@color/purple_200"
                         android:contentDescription="@string/sprt"
-                        android:scaleType="centerInside"/>
+                        android:scaleType="centerInside" />
 
                 <Button
                         android:id="@+id/btn_reciprocal"
@@ -228,7 +227,7 @@
                         android:layout_margin="@dimen/Button_mrgin"
                         android:text="@string/reciprocal"
                         android:textColor="@color/black"
-                        android:textSize="@dimen/button_1_x"/>
+                        android:textSize="@dimen/button_1_x" />
 
                 <Button
                         android:id="@+id/btn_zero"
