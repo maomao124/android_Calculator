@@ -7,10 +7,18 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener
 {
+    /**
+     * 标签
+     */
     public static final String TAG = "MainActivity";
+
     private TextView tv_result;
     // 第一个操作数
     private String firstNum = "";
@@ -28,6 +36,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Toast.makeText(this, "mao " +
+                new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()),
+                Toast.LENGTH_SHORT).show();
 
         // 从布局文件中获取名叫tv_result的文本视图
         tv_result = findViewById(R.id.tv_result);
